@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+
+    <style>
+      /*-- Header Container and styling --*/
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 20px;
+        gap: 15px;
+      }
+      .logo {
+        margin-right: 10px;
+      }
+      h1 {
+        margin-top: 50px; /* Adds margin above and to the right of the heading */
+        margin-right: 50px;
+      }
+
+      /*--  Tab Container and styling --*/
+      .tab-container {
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+        border-color: black;
+        padding: 0px;
+      }
+      .tab {
+        text-decoration: none; /* no underline */
+        font-size: 16px;
+        color: black; /* Text color */
+        padding: 10px 20px;
+        border: 3px solid grey;
+        border-radius: 10px;
+      }
+      .search-bar {
+        padding: 10px;
+        border: 3px solid grey;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      .search-bar:focus {
+        border-color: black; /* Highlight when clicking inside */
+      }
+      /* Hero Banner container and styling */
+      .hero-banner {
+        position: relative; /* This allows absolute positioning inside */
+        height: 400px;
+        background-image: url("images/Hero banner.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: black;
+        margin-top: 50px;
+      }
+      .hero-content {
+        position: absolute; /* Place it on top of the image */
+
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+        margin-top: 10px;
+      }
+      .hero-content p {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+      /* Hero button container and styling */
+      .hero-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff9800;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .hero-button:hover {
+        background-color: #e68900;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header container Section -->
+    <div class="header-container">
+      <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
+      <h1>Journey Beyond Gluten</h1>
+    </div>
+    <!-- Tab container Section -->
+    <div class="tab-container">
+      <a href="Homepage.html" class="tab" target="_blank">Home</a>
+      <a href="products.html" class="tab" target="_blank">Products</a>
+      <a href="cart.html" class="tab" target="_blank">Cart</a>
+      <input type="text" class="search-bar" placeholder="Search" />
+    </div>
+    <!-- Hero banner container Section -->
+    <div class="hero-banner">
+      <div class="hero-content">
+        <h1>Journey Beyond Gluten</h1>
+        <p>20% Discount on Popular Gluten-Free Products!</p>
+        <a href="products.html" class="hero-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+  </body>
+</html>
