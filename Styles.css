@@ -1,3 +1,8 @@
+ body{
+background-color:#A8D5BA ;
+margin: 0; /* Remove any default margin */
+padding: 0
+ }
  /*-- Header Container and styling --*/
  .header-container {
     display: flex;
@@ -5,13 +10,16 @@
     justify-content: left;
     margin-bottom: 20px;
     gap: 15px;
+    background-color:#F5F5DC  ; /* Optional: add background color for header */
+  padding: 20px;
+  font-size: 50px;
   }
   .logo {
     margin-right: 10px;
   }
   h1 {
     margin-top: 50px; /* Adds margin above and to the right of the heading */
-    margin-right: 50px;
+    margin-right: 80px;
   }
 
   /*--  Tab Container and styling --*/
@@ -21,6 +29,9 @@
     gap: 10px;
     border-color: black;
     padding: 0px;
+    background-color: #A8D5BA; /* Light background color on hover */
+  border-color: #ff2f00; /* Border color change on hover */
+  font-weight: bold;
   }
   .tab {
     text-decoration: none; /* no underline */
@@ -29,7 +40,14 @@
     padding: 10px 20px;
     border: 3px solid grey;
     border-radius: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
   }
+  .tab:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+    border-color: #40e0d0; /* Orange border on hover */
+    color: #333333; /* Dark text color on hover */
+  }
+
   .search-bar {
     padding: 10px;
     border: 3px solid grey;
@@ -37,10 +55,12 @@
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s;
+    
   }
   .search-bar:focus {
-    border-color: black; /* Highlight when clicking inside */
+    border-color: #40e0d0; /* Highlight when clicking inside */
   }
+  
   /* Hero Banner container and styling */
   .hero-banner {
     position: relative; /* This allows absolute positioning inside */
@@ -53,33 +73,303 @@
     align-items: center;
     text-align: center;
     color: black;
-    margin-top: 50px;
+    margin-top: 25px;
+  }
+  .hero-banner::before {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 1; /* Make sure overlay is below the text */
   }
   .hero-content {
     position: absolute; /* Place it on top of the image */
-
-    padding: 10px;
+    top: 10px;
+    z-index: 2; /* Ensures the content is above the overlay */
+    padding: 20px;
     border-radius: 10px;
+    color: #f0f0f0;
   }
   .hero-content h1 {
-    font-size: 36px;
-    margin-top: 10px;
-    
+    font-size: 50px;
+    margin-top: 0px; 
   }
   .hero-content p {
-    font-size: 18px;
+    font-size: 40px;
     margin-bottom: 15px;
+    font-weight: bolder;
+
   }
   /* Hero button container and styling */
   .hero-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #ff9800;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-size: 20px;
+    d
   }
   .hero-button:hover {
     background-color: #e68900;
   }
+/* Recipe Section Heading */
+.recipe-heading {
+  font-family:'Georgia', serif ;
+  font-size: 40px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Subtitle under the heading */
+.recipe-subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 30px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+
+
+
+
+/* Recipe container layout */
+.recipe-container {
+  display: flex; /* Use flexbox for layout */
+  gap: 15px; /* Space between image and recipe */
+  margin: 20px 0; /* Add margin between containers */
+  align-items: center; /* Align image and recipe at the top */
+}
+
+/* Left side: Image of recipe */
+.recipe-image {
+  margin-left: 20px; /* Moves image slightly to the right */
+  max-width: 350px; /* Adjust as needed */
+  flex-shrink: 0; /* Prevents the image from shrinking */
+
+}
+
+.recipe-image img {
+  max-width: 350px;
+  width: 100%; /* Make the image responsive */
+  height: auto;
+  border-radius: 10px; /* Round the corners for a nice effect */
+  display: block;
+}
+
+/* Right side: Recipe details */
+.recipe-details {
+  flex: 2; /* Takes up two parts of the container */
+  max-width: 600px; /* Limit the width for readability */
+}
+
+.recipe-details h2 {
+  font-size: 24px;
+  color: #333; /* Dark color for the heading */
+}
+
+.recipe-details p.recipe-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.recipe-details h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.ingredients-list {
+  list-style-type: disc; /* Display bullets for the list */
+  padding-left: 20px; /* Add space for bullets */
+  font-size: 16px;
+  color: #555; /* Dark gray for the text */
+}
+
+.ingredients-list li {
+  margin-bottom: 10px; /* Space between ingredients */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .recipe-container {
+    flex-direction: column; /* Stack the image and details vertically on smaller screens */
+    text-align: left;
+  }
+
+  .recipe-details {
+    max-width: none; /* Remove width limit for small screens */
+  }
+
+  .recipe-image img {
+    max-width: 100%; /* Ensure the image scales down on smaller screens */
+  }
+}
+
+/* Nutrition Card Container */
+.nutrition-card-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  width:auto;
+}
+
+/* Individual Card */
+.nutrition-card {
+  background-color:#F5F5DC;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nutrition-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Name */
+.product-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Table Style */
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  table-layout: fixed;
+  
+
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+.nutrition-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.nutrition-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+  width: 60%;               /* Reduces the width of the footer */
+  margin-left: auto;        /* Centers the footer horizontally */
+  margin-right: auto;       /* Centers the footer horizontally */
+
+}
+/* Authenticity Section */
+.authenticity-container {
+  background-color:#F5F5DC;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.authenticity-heading {
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:#ff2f00;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.authenticity-content {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.authenticity-list {
+  list-style-type:circle;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.authenticity-list li {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.authenticity-list li strong {
+  color:#555;
+}
+
+.authenticity-note {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+  font-style: italic;
+}
+footer {
+  background-color: #333; /* Dark background */
+  color: white;
+  padding: 10px 0;
+ 
+  text-align: end;
+  position: relative;
+  width: 100%;
+  
+}
+
+.footer-container {
+  display: flex;
+  align-items: left;
+  justify-content:left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px 5px;
+}
+
+.footer-logo {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px; /* Space between logo and links */
+  padding-left: 15px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Aligns links properly */
+  padding-top: 5px; /* Moves links slightly down */
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
