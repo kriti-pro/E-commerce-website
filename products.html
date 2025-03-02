@@ -5,6 +5,316 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Products</title>
+    <link rel="stylesheet" href="Styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <!-- Header container Section -->
+      <div class="header-container">
+        <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
+        <h1>Journey Beyond Gluten</h1>
+      </div>
+      <!-- Tab container Section -->
+      <div class="tab-container">
+        <a href="Homepage.html" class="tab" target="_blank">Home</a>
+        <a href="products.html" class="tab" target="_blank">Products</a>
+        <a href="cart.html" class="tab" target="_blank">Cart</a>
+        <a href="cart.html" class="tab" target="_blank">About us</a>
+        <a href="checkoutpage.html" class="tab" target="_blank">Check-out</a>
+        <input type="text" class="search-bar" placeholder="Search" />
+        <div class="menu-dropdown">
+          <button class="menu-btn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Register</a>
+            <a href="#">Login</a>
+            <a href="#">Order History</a>
+            <a href="#">Change Password</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Section for Heading and Concise Description -->
+      <section class="intro">
+        <h2 class="page-title">
+          Wholesome Goodness - Our Gluten Free Collection
+        </h2>
+        <p class="page-description">
+          Discover our handpicked range of gluten-free delights—crafted for
+          taste, health, and quality. From delicious almond flour bread and
+          fluffy quinoa pancakes to savory chickpea pasta and crunchy seed
+          crackers, we bring you the best for every meal. Taste freedom with
+          every bite.
+        </p>
+      </section>
+      <!-- Filter Tabs Section -->
+      <!-- Filter Button and Filter Tabs -->
+      <div class="filter-container">
+        <button class="filter-btn" onclick="toggleFilters()">Filter</button>
+
+        <div class="filter-tabs" id="filterTabs">
+          <div class="filter-category">
+            <button
+              class="category-btn"
+              onclick="toggleCategory('allergen-free')"
+            >
+              Allergen-Free Filters
+            </button>
+            <div class="filter-options" id="allergen-free">
+              <label><input type="checkbox" /> Wheat-Free</label>
+              <label><input type="checkbox" /> Lactose-Free</label>
+              <label><input type="checkbox" /> Egg-Free</label>
+              <label><input type="checkbox" /> Nut-Free</label>
+              <label><input type="checkbox" /> Soy-Free</label>
+            </div>
+          </div>
+
+          <div class="filter-category">
+            <button
+              class="category-btn"
+              onclick="toggleCategory('dietary-preferences')"
+            >
+              Dietary Preferences
+            </button>
+            <div class="filter-options" id="dietary-preferences">
+              <label><input type="checkbox" /> Vegetarian</label>
+              <label><input type="checkbox" /> Vegan</label>
+            </div>
+          </div>
+
+          <div class="filter-category">
+            <button
+              class="category-btn"
+              onclick="toggleCategory('product-type')"
+            >
+              Product Type Filters
+            </button>
+            <div class="filter-options" id="product-type">
+              <label><input type="checkbox" /> Baked Goods</label>
+              <label><input type="checkbox" /> Snacks</label>
+              <label><input type="checkbox" /> Frozen</label>
+              <label><input type="checkbox" /> Pasta</label>
+              <label><input type="checkbox" /> Baking Essentials</label>
+              <label><input type="checkbox" /> Flour</label>
+              <label><input type="checkbox" /> Breakfast Cereals</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="product-grid">
+        <!-- Product Box 1 -->
+        <div class="product-box">
+          <img
+            src="images/apricot & chia oat bars.png"
+            alt="Product 1"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Apricot&Oat bars </span>
+              <span class="product-price">$4.99</span>
+            </div>
+            <div class="product-description">
+              This gluten-free bread is made with the finest ingredients.
+              Perfect for sandwiches or toast.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 2 -->
+        <div class="product-box">
+          <img
+            src="images/maize & rice lasagne.png"
+            alt="Product 2"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Maize & rice lasagne</span>
+              <span class="product-price">$3.99</span>
+            </div>
+            <div class="product-description">
+              A healthy, gluten-free alternative to traditional pasta made from
+              quinoa.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 3 -->
+        <div class="product-box">
+          <img
+            src="images/Maize Rice Fusli.png"
+            alt="Product 3"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Maize Rice Fusli </span>
+              <span class="product-price">$5.49</span>
+            </div>
+            <div class="product-description">
+              These delicious cookies are made with almond flour and are
+              naturally gluten-free.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 4 -->
+        <div class="product-box">
+          <img
+            src="images/Banana Oat Pancake.jpeg"
+            alt="Product 3"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Almond Flour </span>
+              <span class="product-price">$5.49</span>
+            </div>
+            <div class="product-description">
+              These delicious cookies are made with almond flour and are
+              naturally gluten-free.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-grid">
+        <!-- Product Box 5 -->
+        <div class="product-box">
+          <img
+            src="images/Avocado Toast with Poached Egg.jpeg"
+            alt="Product 1"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Gluten-Free </span>
+              <span class="product-price">$4.99</span>
+            </div>
+            <div class="product-description">
+              This gluten-free bread is made with the finest ingredients.
+              Perfect for sandwiches or toast.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 6 -->
+        <div class="product-box">
+          <img
+            src="images/Chia Seed Pudding.jpeg"
+            alt="Product 2"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Quinoa Pasta</span>
+              <span class="product-price">$3.99</span>
+            </div>
+            <div class="product-description">
+              A healthy, gluten-free alternative to traditional pasta made from
+              quinoa.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 7 -->
+        <div class="product-box">
+          <img
+            src="images/Crispy Zucchini Fritters.jpeg"
+            alt="Product 3"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Almond Flour </span>
+              <span class="product-price">$5.49</span>
+            </div>
+            <div class="product-description">
+              These delicious cookies are made with almond flour and are
+              naturally gluten-free.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box 8 -->
+        <div class="product-box">
+          <img
+            src="images/Banana Oat Pancake.jpeg"
+            alt="Product 3"
+            class="product-image"
+          />
+          <div class="product-info">
+            <div class="product-name-price">
+              <span class="product-name">Almond Flour </span>
+              <span class="product-price">$5.49</span>
+            </div>
+            <div class="product-description">
+              These delicious cookies are made with almond flour and are
+              naturally gluten-free.
+            </div>
+            <div class="product-buttons">
+              <button class="buy-btn">Buy</button>
+              <button class="cart-btn">Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
+        <nav class="footer-nav">
+          <a href="FAQ.html" target="_blank">FAQ</a>
+          <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      // Toggle the visibility of the filter tabs
+      function toggleFilters() {
+        var filterTabs = document.getElementById("filterTabs");
+        filterTabs.style.display =
+          filterTabs.style.display === "block" ? "none" : "block";
+      }
+
+      // Toggle the visibility of a specific category
+      function toggleCategory(categoryId) {
+        var category = document.getElementById(categoryId);
+        category.style.display =
+          category.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
 </html>

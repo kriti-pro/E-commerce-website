@@ -5,6 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Cart</title>
+    <link rel="stylesheet" href="Styles.css" />
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <!-- Header container Section -->
+      <div class="header-container">
+        <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
+        <h1>Journey Beyond Gluten</h1>
+      </div>
+      <!-- Tab container Section -->
+      <div class="tab-container">
+        <a href="Homepage.html" class="tab" target="_blank">Home</a>
+        <a href="products.html" class="tab" target="_blank">Products</a>
+        <a href="cart.html" class="tab" target="_blank">Cart</a>
+        <a href="cart.html" class="tab" target="_blank">About us</a>
+        <a href="checkoutpage.html" class="tab" target="_blank">Check-out</a>
+        <input type="text" class="search-bar" placeholder="Search" />
+        <div class="menu-dropdown">
+          <button class="menu-btn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Register</a>
+            <a href="#">Login</a>
+            <a href="#">Order History</a>
+            <a href="#">Change Password</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="cart-container">
+        <h1>Your Selected Items</h1>
+      </div>
+
+      <div class="cart-section">
+        <h2>My Cart</h2>
+      </div>
+      <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!-- Example Row -->
+          <tr>
+              <td><img src="images/apricot & chia oat bars.png" alt="Product 1"></td>
+              <td>Apricot & chia</td>
+              <td class="price">$50</td>
+              <td>
+                <button class="qty-btn">-</button>
+                <input type="number" value="1" min="1" class="qty-input">
+                <button class="qty-btn">+</button>
+              </td>
+              <td class="total-price">$50</td>
+              <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+              <td><img src="images/Avocado Toast with Poached Egg.jpeg" alt="Product 2"></td>
+              <td>Avocado Toast</td>
+              <td class="price">$120</td>
+              <td>
+                <button class="qty-btn">-</button>
+                <input type="number" value="1" min="1" class="qty-input">
+                <button class="qty-btn">+</button>
+              </td>
+              <td class="total-price">$120</td>
+              <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+              <td><img src="images/Banana Oat Pancake.jpeg" alt="Product 3"></td>
+              <td>Banana Oat</td>
+              <td class="price">$75</td>
+              <td>
+                <button class="qty-btn">-</button>
+                <input type="number" value="1" min="1" class="qty-input">
+                <button class="qty-btn">+</button>
+              </td>
+              <td class="total-price">$75</td>
+              <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+              <td><img src="images/Chia Seed Pudding.jpeg" alt="Product 4"></td>
+              <td>Chia Seed Pudding</td>
+              <td class="price">$45</td>
+              <td>
+                <button class="qty-btn">-</button>
+                <input type="number" value="1" min="1" class="qty-input">
+                <button class="qty-btn">+</button>
+              </td>
+              <td class="total-price">$45</td>
+              <td><button class="remove-btn">Remove</button></td>
+          </tr>
+      </tbody>
+    </table>
+</div>
+
+<div class="order-summary-container">
+  <h3>Order Summary</h3>
+  <table class="order-summary-table">
+      <tr>
+          <td>Sub Total</td>
+          <td id="sub-total">$200.00</td>
+      </tr>
+      <tr>
+          <td>Tax</td>
+          <td id="tax">$10.00</td>
+      </tr>
+      <tr>
+          <td><strong>Total</strong></td>
+          <td id="total"><strong>$210.00</strong></td>
+      </tr>
+  </table>
+  <a href="products.html"  target="_blank">
+    <button class="action-btn">Continue Shopping</button>
+  </a>
+  <a href="checkoutpage.html"  target="_blank">
+  <button class="action-btn">Proceed to Checkout</button> 
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<script>
+function increaseQty(button) {
+    let qtySpan = button.parentElement.querySelector('.qty');
+    qtySpan.innerText = parseInt(qtySpan.innerText) + 1;
+}
+
+function decreaseQty(button) {
+    let qtySpan = button.parentElement.querySelector('.qty');
+    let currentQty = parseInt(qtySpan.innerText);
+    if (currentQty > 1) {
+        qtySpan.innerText = currentQty - 1;
+    }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <footer>
+      <div class="footer-container">
+        <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
+        <nav class="footer-nav">
+          <a href="FAQ.html" target="_blank">FAQ</a>
+          <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
 </html>

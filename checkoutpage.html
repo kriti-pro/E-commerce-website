@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="Styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Header container Section -->
+      <div class="header-container">
+        <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
+        <h1>Journey Beyond Gluten</h1>
+      </div>
+      <!-- Tab container Section -->
+      <div class="tab-container">
+        <a href="Homepage.html" class="tab" target="_blank">Home</a>
+        <a href="products.html" class="tab" target="_blank">Products</a>
+        <a href="cart.html" class="tab" target="_blank">Cart</a>
+        <a href="cart.html" class="tab" target="_blank">About us</a>
+        <a href="checkoutpage.html" class="tab" target="_blank">Check-out</a>
+        <input type="text" class="search-bar" placeholder="Search" />
+        <div class="menu-dropdown">
+          <button class="menu-btn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Register</a>
+            <a href="#">Login</a>
+            <a href="#">Order History</a>
+            <a href="#">Change Password</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="checkout-header">
+        <h1>CHECKOUT</h1>
+      </div>
+
+      <div class="order-summary-container">
+        <h3>Order Summary</h3>
+        <table class="order-summary-table">
+          <tr>
+            <td>Sub Total</td>
+            <td id="sub-total">$200.00</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td id="tax">$10.00</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td id="total"><strong>$210.00</strong></td>
+          </tr>
+        </table>
+      </div>
+      <div class="checkout-info">
+        <h2>Shipping information</h2>
+      </div>
+
+      <form class="shipping-form">
+        <!-- ✅ Form starts correctly here -->
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="address1">Address Line 1</label>
+        <input type="text" id="address1" name="address1" required />
+
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" name="address2" />
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="state">State</label>
+        <select id="state" name="state" required>
+          <option value="" disabled selected>Select State</option>
+          <option value="California">California</option>
+          <option value="Texas">Texas</option>
+          <option value="New York">New York</option>
+          <option value="Florida">Florida</option>
+          <option value="Illinois">Illinois</option>
+          <!-- Add more states as needed -->
+        </select>
+
+        <label for="zipcode">Zip Code</label>
+        <input type="text" id="zipcode" name="zipcode" required />
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="" disabled selected>Select Country</option>
+          <option value="USA">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">United Kingdom</option>
+          <option value="India">India</option>
+          <option value="Australia">Australia</option>
+          <!-- Add more countries as needed -->
+        </select>
+
+        <div class="save-address">
+          <input type="checkbox" id="save-address" name="save-address" />
+          <label for="save-address">Save this address for future</label>
+        </div>
+
+        <button type="submit" class="continue-btn">Continue to Pay</button>
+        <!-- Return to Cart button -->
+        <button
+          type="button"
+          class="return-btn"
+          onclick="window.location.href='cart.html'"
+          target="_blank"
+        >
+          Return to Cart
+        </button>
+      </form>
+      <!-- ✅ Form ends correctly here -->
+
+      <form class="payment-method-form">
+        <!-- Payment Method Options -->
+        <h2>Payment Method</h2>
+
+        <label>
+          <input
+            type="radio"
+            name="payment-method"
+            value="card"
+            id="credit-card"
+          />
+          Credit/Debit Card </label
+        ><br />
+        <label>
+          <input
+            type="radio"
+            name="payment-method"
+            value="paypal"
+            id="paypal"
+          />
+          PayPal </label
+        ><br />
+        <label>
+          <input
+            type="radio"
+            name="payment-method"
+            value="bank"
+            id="bank-transfer"
+          />
+          Bank Transfer </label
+        ><br />
+        <label>
+          <input type="radio" name="payment-method" value="cod" id="cod" /> Cash
+          on Delivery </label
+        ><br />
+
+        <!-- Card Details Table (will be visible later with JS) -->
+        <div
+          id="card-details"
+          class="card-details-table"
+          style="display: block"
+        >
+          <h3>Card Details</h3>
+          <table>
+            <tr>
+              <td><label for="card-number">Card Number</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="card-number"
+                  name="card-number"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="card-expiry">Expiry Date</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="card-expiry"
+                  name="card-expiry"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="card-cvc">CVC</label></td>
+              <td>
+                <input type="text" id="card-cvc" name="card-cvc" required />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <button type="submit" class="continue-btn">Submit</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
+        <nav class="footer-nav">
+          <a href="FAQ.html" target="_blank">FAQ</a>
+          <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
