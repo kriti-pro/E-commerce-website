@@ -17,3 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Add click event to recipe cards
+const recipeCards = document.querySelectorAll('.recipe-card');
+
+recipeCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped'); // Toggle flipped class
+  });
+});

@@ -431,116 +431,104 @@
 
  }
 
- /* Recipe Section Heading */
- .recipe-heading {
-   font-family: 'Georgia', serif;
-   font-size: 40px;
-   color: #333;
+ .recipe-section h2 {
    text-align: center;
-   margin-bottom: 20px;
  }
 
- /* Subtitle under the heading */
- .recipe-subtitle {
-   font-family: 'Georgia', serif;
-   font-size: 30px;
-   color: #777;
+ .recipe-section p {
    text-align: center;
-   margin-bottom: 30px;
-   font-style: italic;
-   animation: fadeIn 1s ease;
  }
 
- /* Recipe container layout */
- .recipe-container {
+ /* Recipe Card Container */
+ .cards-container {
    display: flex;
-   /* Use flexbox for layout */
-   gap: 15px;
-   /* Space between image and recipe */
-   margin: 20px 0;
-   /* Add margin between containers */
-   align-items: center;
-   /* Align image and recipe at the top */
+   flex-wrap: wrap;
+   gap: 20px;
+   /* Space between cards */
+   justify-content: center;
+   /* Center cards horizontally */
+   padding: 20px;
+   /* Add some padding around the container */
  }
 
- /* Left side: Image of recipe */
- .recipe-image {
-   margin-left: 20px;
-   /* Moves image slightly to the right */
-   max-width: 350px;
-   /* Adjust as needed */
-   flex-shrink: 0;
-   /* Prevents the image from shrinking */
-
+ /* Recipe Card Styles */
+ .recipe-card {
+   width: 300px;
+   /* Fixed width for each card */
+   height: 400px;
+   /* Fixed height for each card */
+   position: relative;
+   perspective: 1000px;
+   /* For 3D flip effect */
+   cursor: pointer;
  }
 
- .recipe-image img {
-   max-width: 350px;
+ /* Front and Back Sides of the Card */
+ .recipe-card .card-front,
+ .recipe-card .card-back {
    width: 100%;
-   /* Make the image responsive */
-   height: auto;
-   border-radius: 10px;
-   /* Round the corners for a nice effect */
-   display: block;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   backface-visibility: hidden;
+   /* Hide the back face during flip */
+   transition: transform 0.6s ease;
+   /* Smooth flip animation */
+   border-radius: 15px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
  }
 
- /* Right side: Recipe details */
- .recipe-details {
-   flex: 2;
-   /* Takes up two parts of the container */
-   max-width: 600px;
-   /* Limit the width for readability */
+ /* Front Side (Image and Title) */
+ .recipe-card .card-front {
+   background: #fff;
+   transform: rotateY(0deg);
+   /* Initially visible */
  }
 
- .recipe-details h2 {
-   font-size: 24px;
-   color: #333;
-   /* Dark color for the heading */
+ .recipe-card .card-front .card-image {
+   width: 100%;
+   height: 70%;
+   /* Adjust based on your design */
+   overflow: hidden;
  }
 
- .recipe-details p.recipe-description {
-   font-size: 18px;
-   margin-bottom: 20px;
+ .recipe-card .card-front .card-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   /* Ensure the image covers the area */
  }
 
- .recipe-details h3 {
-   font-size: 20px;
-   margin-top: 10px;
-   color: #333;
+ .recipe-card .card-front .card-title {
+   padding: 20px;
+   text-align: center;
  }
 
- .ingredients-list {
-   list-style-type: disc;
-   /* Display bullets for the list */
-   padding-left: 20px;
-   /* Add space for bullets */
-   font-size: 16px;
-   color: #555;
-   /* Dark gray for the text */
+ /* Back Side (Recipe Details) */
+ .recipe-card .card-back {
+   background: #fff;
+   transform: rotateY(180deg);
+   /* Initially hidden */
+   padding: 20px;
  }
 
- .ingredients-list li {
-   margin-bottom: 10px;
-   /* Space between ingredients */
+ .recipe-card .card-back .card-content {
+   height: 100%;
+   overflow-y: auto;
+   /* Scrollable content if needed */
  }
 
- /* Responsive layout */
- @media (max-width: 768px) {
-   .recipe-container {
-     flex-direction: column;
-     /* Stack the image and details vertically on smaller screens */
-     text-align: left;
-   }
+ /* Flip Effect */
+ .recipe-card.flipped .card-front {
+   transform: rotateY(180deg);
+   /* Hide front side */
+ }
 
-   .recipe-details {
-     max-width: none;
-     /* Remove width limit for small screens */
-   }
-
-   .recipe-image img {
-     max-width: 100%;
-     /* Ensure the image scales down on smaller screens */
-   }
+ .recipe-card.flipped .card-back {
+   transform: rotateY(0deg);
+   /* Show back side */
  }
 
  /* Nutrition Card Container */
