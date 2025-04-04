@@ -35,172 +35,139 @@
     </header>
 
     <main>
-      <div class="checkout-header">
-        <h1>CHECKOUT</h1>
+     <!-- Checkout Header -->
+     <div class="checkout-header">
+      <h1>CHECKOUT</h1>
+    </div>
+
+    <!-- Order Summary Card -->
+    <div class="checkout-summary-card">
+      <h3>Order Summary</h3>
+      <table class="order-summary-table">
+        <tr>
+          <td>Sub Total</td>
+          <td id="sub-total">$200.00</td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td id="tax">$10.00</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td id="total"><strong>$210.00</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Checkout Cards Container -->
+    <div class="checkout-cards-container">
+      <!-- Shipping Information Card -->
+      <div class="checkout-info-card">
+        <h2>Shipping Information</h2>
+        <form class="checkout-form" id="shipping-form">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="address1">Address Line 1</label>
+          <input type="text" id="address1" name="address1" required />
+
+          <label for="address2">Address Line 2</label>
+          <input type="text" id="address2" name="address2" />
+
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required />
+
+          <label for="state">State</label>
+          <select id="state" name="state" required>
+            <option value="" disabled selected>Select State</option>
+            <option value="California">California</option>
+            <option value="Texas">Texas</option>
+            <option value="New York">New York</option>
+            <option value="Florida">Florida</option>
+            <option value="Illinois">Illinois</option>
+          </select>
+
+          <label for="zipcode">Zip Code</label>
+          <input type="text" id="zipcode" name="zipcode" required />
+
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select Country</option>
+            <option value="USA">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="UK">United Kingdom</option>
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+          </select>
+
+          <div class="save-address">
+            <input type="checkbox" id="save-address" name="save-address" />
+            <label for="save-address">Save this address for future</label>
+          </div>
+
+          <button type="submit" class="checkout-btn">Continue to Pay</button>
+          <button type="button" class="checkout-btn return-btn" onclick="window.location.href='cart.html'">
+            Return to Cart
+          </button>
+        </form>
       </div>
 
-      <div class="order-summary-container">
-        <h3>Order Summary</h3>
-        <table class="order-summary-table">
-          <tr>
-            <td>Sub Total</td>
-            <td id="sub-total">$200.00</td>
-          </tr>
-          <tr>
-            <td>Tax</td>
-            <td id="tax">$10.00</td>
-          </tr>
-          <tr>
-            <td><strong>Total</strong></td>
-            <td id="total"><strong>$210.00</strong></td>
-          </tr>
-        </table>
-      </div>
-      <div class="checkout-info">
-        <h2>Shipping information</h2>
-      </div>
-
-      <form class="shipping-form">
-        <!-- ✅ Form starts correctly here -->
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="address1">Address Line 1</label>
-        <input type="text" id="address1" name="address1" required />
-
-        <label for="address2">Address Line 2</label>
-        <input type="text" id="address2" name="address2" />
-
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" required />
-
-        <label for="state">State</label>
-        <select id="state" name="state" required>
-          <option value="" disabled selected>Select State</option>
-          <option value="California">California</option>
-          <option value="Texas">Texas</option>
-          <option value="New York">New York</option>
-          <option value="Florida">Florida</option>
-          <option value="Illinois">Illinois</option>
-          <!-- Add more states as needed -->
-        </select>
-
-        <label for="zipcode">Zip Code</label>
-        <input type="text" id="zipcode" name="zipcode" required />
-
-        <label for="country">Country</label>
-        <select id="country" name="country" required>
-          <option value="" disabled selected>Select Country</option>
-          <option value="USA">United States</option>
-          <option value="Canada">Canada</option>
-          <option value="UK">United Kingdom</option>
-          <option value="India">India</option>
-          <option value="Australia">Australia</option>
-          <!-- Add more countries as needed -->
-        </select>
-
-        <div class="save-address">
-          <input type="checkbox" id="save-address" name="save-address" />
-          <label for="save-address">Save this address for future</label>
-        </div>
-
-        <button type="submit" class="continue-btn">Continue to Pay</button>
-        <!-- Return to Cart button -->
-        <button
-          type="button"
-          class="return-btn"
-          onclick="window.location.href='cart.html'"
-          target="_blank"
-        >
-          Return to Cart
-        </button>
-      </form>
-      <!-- ✅ Form ends correctly here -->
-
-      <form class="payment-method-form">
-        <!-- Payment Method Options -->
+      <!-- Payment Method Card -->
+      <div class="checkout-info-card">
         <h2>Payment Method</h2>
+        <form class="checkout-form" id="payment-form">
+          <label>
+            <input type="radio" name="payment-method" value="card" id="credit-card" />
+            Credit/Debit Card
+          </label><br />
+          <label>
+            <input type="radio" name="payment-method" value="paypal" id="paypal" />
+            PayPal
+          </label><br />
+          <label>
+            <input type="radio" name="payment-method" value="bank" id="bank-transfer" />
+            Bank Transfer
+          </label><br />
+          <label>
+            <input type="radio" name="payment-method" value="cod" id="cod" />
+            Cash on Delivery
+          </label><br />
 
-        <label>
-          <input
-            type="radio"
-            name="payment-method"
-            value="card"
-            id="credit-card"
-          />
-          Credit/Debit Card </label
-        ><br />
-        <label>
-          <input
-            type="radio"
-            name="payment-method"
-            value="paypal"
-            id="paypal"
-          />
-          PayPal </label
-        ><br />
-        <label>
-          <input
-            type="radio"
-            name="payment-method"
-            value="bank"
-            id="bank-transfer"
-          />
-          Bank Transfer </label
-        ><br />
-        <label>
-          <input type="radio" name="payment-method" value="cod" id="cod" /> Cash
-          on Delivery </label
-        ><br />
+          <!-- Card Details Section -->
+          <div id="card-details" class="card-details-table">
+            <h3>Card Details</h3>
+            <table>
+              <tr>
+                <td><label for="card-number">Card Number</label></td>
+                <td>
+                  <input type="text" id="card-number" name="card-number" required />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="card-expiry">Expiry Date</label></td>
+                <td>
+                  <input type="text" id="card-expiry" name="card-expiry" required />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="card-cvc">CVC</label></td>
+                <td>
+                  <input type="text" id="card-cvc" name="card-cvc" required />
+                </td>
+              </tr>
+            </table>
+          </div>
 
-        <!-- Card Details Table (will be visible later with JS) -->
-        <div
-          id="card-details"
-          class="card-details-table"
-          style="display: block"
-        >
-          <h3>Card Details</h3>
-          <table>
-            <tr>
-              <td><label for="card-number">Card Number</label></td>
-              <td>
-                <input
-                  type="text"
-                  id="card-number"
-                  name="card-number"
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="card-expiry">Expiry Date</label></td>
-              <td>
-                <input
-                  type="text"
-                  id="card-expiry"
-                  name="card-expiry"
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="card-cvc">CVC</label></td>
-              <td>
-                <input type="text" id="card-cvc" name="card-cvc" required />
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div>
-          <button type="submit" class="continue-btn">Submit</button>
-        </div>
-      </form>
+          <button type="submit" class="checkout-btn">Submit</button>
+        </form>
+      </div>
+    </div>
     </main>
 
     <footer>

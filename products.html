@@ -12,7 +12,7 @@
       <!-- Header container Section -->
       <div class="header-container">
         <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
-        <h1>Journey Beyond Gluten</h1>
+        <h1>Gluten-Free Destiny</h1>
       </div>
       <!-- Tab container Section -->
       <div class="tab-container">
@@ -25,10 +25,101 @@
         <div class="menu-dropdown">
           <button class="menu-btn">Menu</button>
           <div class="dropdown-content">
-            <a href="#">Register</a>
-            <a href="#">Login</a>
-            <a href="#">Order History</a>
-            <a href="#">Change Password</a>
+            <a href="#" id="open-register-modal">Register</a>
+            <a href="#" id="open-login-modal">Login</a>
+            <a href="#" id="open-order-history-modal">Order History</a>
+            <a href="#" id="open-change-password-modal">Change Password</a>
+          </div>
+        </div>
+
+        <!-- Modals -->
+<div id="register-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Register</h2>
+    <form id="register-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required />
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" name="login-email" required />
+
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" name="login-password" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<div id="order-history-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Order History</h2>
+    <form id="order-history-form">
+      <label for="order-id">Order ID:</label>
+      <input type="text" id="order-id" name="order-id" required />
+
+      <label for="email-order-history">Email:</label>
+      <input type="email" id="email-order-history" name="email-order-history" required />
+
+      <button type="submit">Search</button>
+    </form>
+    <div id="order-history-results">
+      <!-- Order history results will be displayed here -->
+    </div>
+  </div>
+</div>
+
+<div id="change-password-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Change Password</h2>
+    <form id="change-password-form">
+      <label for="current-password">Current Password:</label>
+      <input type="password" id="current-password" name="current-password" required />
+
+      <label for="new-password">New Password:</label>
+      <input type="password" id="new-password" name="new-password" required />
+
+      <label for="confirm-new-password">Confirm New Password:</label>
+      <input type="password" id="confirm-new-password" name="confirm-new-password" required />
+
+      <button type="submit">Change Password</button>
+    </form>
+  </div>
+</div>
+        <button id="cart-button" class="cart-button">Cart 🛒</button>
+        <div id="cart-panel" class="cart-panel">
+          <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-cart">&times;</button>
+          </div>
+          <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+          </div>
+          <div class="cart-total">
+            <span>Total: $<span id="cart-total-price">0.00</span></span>
+            <button class="checkout-btn">Checkout</button>
           </div>
         </div>
       </div>
@@ -104,20 +195,19 @@
 
       <section class="product-grid">
         <!-- Product Box 1 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/apricot & chia oat bars.png"
-            alt="Product 1"
+            alt="Apricot & Chia Oat Bars"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Apricot&Oat bars </span>
+              <span class="product-name">Apricot & Chia Oat Bars</span>
               <span class="product-price">$4.99</span>
             </div>
             <div class="product-description">
-              This gluten-free bread is made with the finest ingredients.
-              Perfect for sandwiches or toast.
+              These delicious oat bars are made with apricot and chia seeds, perfect for a healthy snack.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -125,22 +215,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 2 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/maize & rice lasagne.png"
-            alt="Product 2"
+            alt="Maize & Rice Lasagne"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Maize & rice lasagne</span>
+              <span class="product-name">Maize & Rice Lasagne</span>
               <span class="product-price">$3.99</span>
             </div>
             <div class="product-description">
-              A healthy, gluten-free alternative to traditional pasta made from
-              quinoa.
+              A gluten-free lasagne made with maize and rice, perfect for Italian cuisine lovers.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -148,22 +237,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 3 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Maize Rice Fusli.png"
-            alt="Product 3"
+            alt="Maize Rice Fusli"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Maize Rice Fusli </span>
+              <span class="product-name">Maize Rice Fusli</span>
               <span class="product-price">$5.49</span>
             </div>
             <div class="product-description">
-              These delicious cookies are made with almond flour and are
-              naturally gluten-free.
+              A gluten-free pasta made with maize and rice, perfect for a quick and healthy meal.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -171,22 +259,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 4 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Banana Oat Pancake.jpeg"
-            alt="Product 3"
+            alt="Banana Oat Pancake"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Almond Flour </span>
+              <span class="product-name">Banana Oat Pancake</span>
               <span class="product-price">$5.49</span>
             </div>
             <div class="product-description">
-              These delicious cookies are made with almond flour and are
-              naturally gluten-free.
+              Fluffy and delicious pancakes made with banana and oats, perfect for a gluten-free breakfast.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -194,24 +281,21 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="product-grid">
+  
         <!-- Product Box 5 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Avocado Toast with Poached Egg.jpeg"
-            alt="Product 1"
+            alt="Avocado Toast with Poached Egg"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Gluten-Free </span>
+              <span class="product-name">Avocado Toast with Poached Egg</span>
               <span class="product-price">$4.99</span>
             </div>
             <div class="product-description">
-              This gluten-free bread is made with the finest ingredients.
-              Perfect for sandwiches or toast.
+              A healthy and delicious breakfast option with avocado and poached egg on gluten-free toast.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -219,22 +303,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 6 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Chia Seed Pudding.jpeg"
-            alt="Product 2"
+            alt="Chia Seed Pudding"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Quinoa Pasta</span>
+              <span class="product-name">Chia Seed Pudding</span>
               <span class="product-price">$3.99</span>
             </div>
             <div class="product-description">
-              A healthy, gluten-free alternative to traditional pasta made from
-              quinoa.
+              A nutritious and gluten-free pudding made with chia seeds, perfect for a healthy dessert.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -242,22 +325,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 7 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Crispy Zucchini Fritters.jpeg"
-            alt="Product 3"
+            alt="Crispy Zucchini Fritters"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Almond Flour </span>
+              <span class="product-name">Crispy Zucchini Fritters</span>
               <span class="product-price">$5.49</span>
             </div>
             <div class="product-description">
-              These delicious cookies are made with almond flour and are
-              naturally gluten-free.
+              Crispy and delicious fritters made with zucchini, perfect for a gluten-free snack.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -265,22 +347,21 @@
             </div>
           </div>
         </div>
-
+  
         <!-- Product Box 8 -->
-        <div class="product-box">
+        <div class="product-box card">
           <img
             src="images/Banana Oat Pancake.jpeg"
-            alt="Product 3"
+            alt="Banana Oat Pancake"
             class="product-image"
           />
           <div class="product-info">
             <div class="product-name-price">
-              <span class="product-name">Almond Flour </span>
+              <span class="product-name">Banana Oat Pancake</span>
               <span class="product-price">$5.49</span>
             </div>
             <div class="product-description">
-              These delicious cookies are made with almond flour and are
-              naturally gluten-free.
+              Fluffy and delicious pancakes made with banana and oats, perfect for a gluten-free breakfast.
             </div>
             <div class="product-buttons">
               <button class="buy-btn">Buy</button>
@@ -301,20 +382,6 @@
         </nav>
       </div>
     </footer>
-    <script>
-      // Toggle the visibility of the filter tabs
-      function toggleFilters() {
-        var filterTabs = document.getElementById("filterTabs");
-        filterTabs.style.display =
-          filterTabs.style.display === "block" ? "none" : "block";
-      }
-
-      // Toggle the visibility of a specific category
-      function toggleCategory(categoryId) {
-        var category = document.getElementById(categoryId);
-        category.style.display =
-          category.style.display === "block" ? "none" : "block";
-      }
-    </script>
+  <script src="script.js"></script>
   </body>
 </html>

@@ -12,42 +12,61 @@
       <!-- Header container Section -->
       <div class="header-container">
         <img src="images/Logo.jpg" alt="Logo of Gluten free Website" />
-        <h1>Journey Beyond Gluten</h1>
+        <h1>Gluten-Free Destiny</h1>
       </div>
-      <!-- Tab container Section -->
       <div class="tab-container">
         <a href="Homepage.html" class="tab" target="_self">Home</a>
         <a href="products.html" class="tab" target="_self">Products</a>
         <a href="cart.html" class="tab" target="_self">Cart</a>
         <a href="Aboutus.html" class="tab" target="_self">About us</a>
         <a href="checkoutpage.html" class="tab" target="_self">Check-out</a>
-
         <input type="text" class="search-bar" placeholder="Search" />
         <div class="menu-dropdown">
           <button class="menu-btn">Menu</button>
           <div class="dropdown-content">
-            <a href="#">Register</a>
-            <a href="#">Login</a>
-            <a href="#">Order History</a>
-            <a href="#">Change Password</a>
+            <a href="#" id="open-register-modal">Register</a>
+            <a href="#" id="open-login-modal">Login</a>
+            <a href="#" id="open-order-history-modal">Order History</a>
+            <a href="#" id="open-change-password-modal">Change Password</a>
           </div>
         </div>
       </div>
+
+      <button id="cart-button" class="cart-button">Cart 🛒</button>
+        <div id="cart-panel" class="cart-panel">
+          <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-cart">&times;</button>
+          </div>
+          <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+          </div>
+          <div class="cart-total">
+            <span>Total: $<span id="cart-total-price">0.00</span></span>
+            <button class="checkout-btn">Checkout</button>
+          </div>
+        </div>
+
+
+      
     </header>
     <main>
       <!-- Hero banner container Section -->
-      <div class="hero-banner">
-        <div class="hero-content">
-          <h1>Gluten-Free DESTINY</h1>
-          <p>20% Discount on Popular Gluten-Free Products!</p>
-          <a href="products.html" class="hero-button" target="_blank"
-            >Buy Now</a
-          >
-        </div>
-      </div>
+        
+      
       <div class="recipe-section">
-        <h2 class="recipe-heading">Our Gluten-Free Recipes</h2>
-        <p class="recipe-subtitle">Delicious & Healthy – Crafted with Care</p>
+        <div class="hero-content">
+          
+        </div>
+        <section class="intro2">
+        <h2 class="page-title">Our Gluten-Free Recipes</h2>
+        <p class="page-description">Delicious & Healthy – Crafted with Care<br>
+          <strong>20% Discount on Popular Gluten-Free Products!</strong></p><br>
+          <div class="buynow-button">
+          <a href="products.html" class="hero-button" target="_blank"
+            >Buy Now</a>
+          </div>
+        </section>
 
         <!-- Recipe Cards/Content goes here -->
       </div>
@@ -193,44 +212,45 @@
         </div>
         <!-- Add more cards as needed -->
       </div>
-      <div class="authenticity-container">
+      <div class="authenticity-card-container">
+      <div class="authenticity-card">
         <h2 class="authenticity-heading">Our Commitment to Authenticity</h2>
-        <div class="authenticity-content">
-          <ul class="authenticity-list">
-            <li>
-              <strong>✅ Certified Gluten-Free</strong> – Lab-tested and
-              certified by the Gluten-Free Certification Organization (GFCO).
-            </li>
-            <li>
-              <strong>✅ Non-GMO Ingredients</strong> – All ingredients are
-              carefully sourced to meet organic and non-GMO standards.
-            </li>
-            <li>
-              <strong>✅ Third-Party Tested</strong> – Each batch is rigorously
-              tested to ensure zero gluten contamination.
-            </li>
-            <li>
-              <strong>✅ Transparent Labeling</strong> – We ensure full
-              transparency with clear, honest labels on every product.
-            </li>
-          </ul>
-          <p class="authenticity-note">
-            Your health and trust are our top priority. We are committed to
-            providing products you can rely on!
-          </p>
-        </div>
+        <ul class="authenticity-list">
+          <li class="authenticity-item">
+            <strong>✅ Certified Gluten-Free</strong> – Lab-tested and certified by the Gluten-Free Certification Organization (GFCO).
+          </li>
+          <li class="authenticity-item">
+            <strong>✅ Non-GMO Ingredients</strong> – All ingredients are carefully sourced to meet organic and non-GMO standards.
+          </li>
+          <li class="authenticity-item">
+            <strong>✅ Third-Party Tested</strong> – Each batch is rigorously tested to ensure zero gluten contamination.
+          </li>
+          <li class="authenticity-item">
+            <strong>✅ Transparent Labeling</strong> – We ensure full transparency with clear, honest labels on every product.
+          </li>
+        </ul>
+        <p class="authenticity-note">
+          Your health and trust are our top priority. We are committed to providing products you can rely on!
+        </p>
+      </div>
       </div>
     </main>
-    <footer>
-      <div class="footer-container">
-        <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
-        <nav class="footer-nav">
-          <a href="FAQ.html" target="_blank">FAQ</a>
-          <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
-          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </nav>
+
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-text">
+      <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
+      <nav class="footer-nav">
+        <a href="FAQ.html" target="_blank">FAQ</a>
+        <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      </nav>
       </div>
-    </footer>
+    </div>
+  </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

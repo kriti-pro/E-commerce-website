@@ -13,7 +13,7 @@
   <!-- Header Section -->
   <div class="header-container">
     <img src="images/Logo.jpg" alt="Journey Beyond Gluten Logo">
-    <h1>Journey Beyond Gluten</h1>
+    <h1>Gluten-Free Destiny</h1>
   </div>
   <!-- Tab container Section -->
   <div class="tab-container">
@@ -22,33 +22,106 @@
     <a href="cart.html" class="tab" target="_self">Cart</a>
     <a href="Aboutus.html" class="tab" target="_self">About us</a>
     <a href="checkoutpage.html" class="tab" target="_self">Check-out</a>
-
     <input type="text" class="search-bar" placeholder="Search" />
     <div class="menu-dropdown">
       <button class="menu-btn">Menu</button>
       <div class="dropdown-content">
-        <a href="#">Register</a>
-        <a href="#">Login</a>
-        <a href="#">Order History</a>
-        <a href="#">Change Password</a>
+        <a href="#" id="open-register-modal">Register</a>
+        <a href="#" id="open-login-modal">Login</a>
+        <a href="#" id="open-order-history-modal">Order History</a>
+        <a href="#" id="open-change-password-modal">Change Password</a>
       </div>
     </div>
   </div>
+
+<!-- Modals -->
+<div id="register-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h2>Register</h2>
+<form id="register-form">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required />
+
+  <label for="confirm-password">Confirm Password:</label>
+  <input type="password" id="confirm-password" name="confirm-password" required />
+
+  <button type="submit">Register</button>
+</form>
+</div>
+</div>
+
+<div id="login-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h2>Login</h2>
+<form id="login-form">
+  <label for="login-email">Email:</label>
+  <input type="email" id="login-email" name="login-email" required />
+
+  <label for="login-password">Password:</label>
+  <input type="password" id="login-password" name="login-password" required />
+
+  <button type="submit">Login</button>
+</form>
+</div>
+</div>
+
+<div id="order-history-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h2>Order History</h2>
+<form id="order-history-form">
+  <label for="order-id">Order ID:</label>
+  <input type="text" id="order-id" name="order-id" required />
+
+  <label for="email-order-history">Email:</label>
+  <input type="email" id="email-order-history" name="email-order-history" required />
+
+  <button type="submit">Search</button>
+</form>
+<div id="order-history-results">
+  <!-- Order history results will be displayed here -->
+</div>
+</div>
+</div>
+
+<div id="change-password-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h2>Change Password</h2>
+<form id="change-password-form">
+  <label for="current-password">Current Password:</label>
+  <input type="password" id="current-password" name="current-password" required />
+
+  <label for="new-password">New Password:</label>
+  <input type="password" id="new-password" name="new-password" required />
+
+  <label for="confirm-new-password">Confirm New Password:</label>
+  <input type="password" id="confirm-new-password" name="confirm-new-password" required />
+
+  <button type="submit">Change Password</button>
+</form>
+</div>
+</div>
 
   </header>
 
 
   <main>
-  <!-- Hero Banner Section -->
-  <section class="hero-banner">
-    <h1>Journey Beyond Gluten</h1>
-  </section>
 
   <!-- Sections of Information -->
-    <div class="content">
-      <h2>Welcome to Journey Beyond Gluten</h2>
-      <p>Your short message goes here. This could be a brief introduction to your store and what you offer.</p>
-  
+    <div class="intro3">
+      <h2 class="page-title">About Us</h2>
+      <p></p>
+    </div>
+      <div class="content">
       <!-- Card 1: Who We Are -->
       <div class="card">
         <h3>Who We Are</h3>
@@ -113,12 +186,14 @@
   <!-- Footer Section -->
   <footer>
     <div class="footer-container">
+      <div class="footer-text">
       <img src="images/Logo.jpg" alt="Logo" class="footer-logo" />
       <nav class="footer-nav">
         <a href="FAQ.html" target="_blank">FAQ</a>
         <a href="mailto:32146164@student.uwl.ac.uk">Contact Us</a>
         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
       </nav>
+      </div>
     </div>
   </footer>
 

@@ -35,142 +35,99 @@
       </div>
     </header>
     <main>
-      <div class="cart-container">
-        <h1>Your Selected Items</h1>
-      </div>
-
       <div class="cart-section">
         <h2>My Cart</h2>
-      </div>
-      <table class="cart-table">
-        <thead>
+        <table class="cart-table">
+          <thead>
             <tr>
-                <th>Product</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Remove</th>
+              <th>Product</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Remove</th>
             </tr>
-        </thead>
-        <tbody>
-          <!-- Example Row -->
-          <tr>
-              <td><img src="images/apricot & chia oat bars.png" alt="Product 1"></td>
-              <td>Apricot & chia</td>
-              <td class="price">$50</td>
+          </thead>
+          <tbody>
+            <!-- Example Row 1 -->
+            <tr>
+              <td><img src="images/apricot & chia oat bars.png" alt="Apricot & Chia Oat Bars"></td>
+              <td>Apricot & Chia Oat Bars</td>
+              <td class="price">$4.99</td>
               <td>
-                <button class="qty-btn">-</button>
+                <button class="qty-btn minus">-</button>
                 <input type="number" value="1" min="1" class="qty-input">
-                <button class="qty-btn">+</button>
+                <button class="qty-btn plus">+</button>
               </td>
-              <td class="total-price">$50</td>
+              <td class="total-price">$4.99</td>
               <td><button class="remove-btn">Remove</button></td>
-          </tr>
-          <tr>
-              <td><img src="images/Avocado Toast with Poached Egg.jpeg" alt="Product 2"></td>
+            </tr>
+            <!-- Example Row 2 -->
+            <tr>
+              <td><img src="images/Avocado Toast with Poached Egg.jpeg" alt="Avocado Toast"></td>
               <td>Avocado Toast</td>
-              <td class="price">$120</td>
+              <td class="price">$5.99</td>
               <td>
-                <button class="qty-btn">-</button>
+                <button class="qty-btn minus">-</button>
                 <input type="number" value="1" min="1" class="qty-input">
-                <button class="qty-btn">+</button>
+                <button class="qty-btn plus">+</button>
               </td>
-              <td class="total-price">$120</td>
+              <td class="total-price">$5.99</td>
               <td><button class="remove-btn">Remove</button></td>
-          </tr>
-          <tr>
-              <td><img src="images/Banana Oat Pancake.jpeg" alt="Product 3"></td>
-              <td>Banana Oat</td>
-              <td class="price">$75</td>
+            </tr>
+            <!-- Example Row 3 -->
+            <tr>
+              <td><img src="images/Banana Oat Pancake.jpeg" alt="Banana Oat Pancake"></td>
+              <td>Banana Oat Pancake</td>
+              <td class="price">$6.49</td>
               <td>
-                <button class="qty-btn">-</button>
+                <button class="qty-btn minus">-</button>
                 <input type="number" value="1" min="1" class="qty-input">
-                <button class="qty-btn">+</button>
+                <button class="qty-btn plus">+</button>
               </td>
-              <td class="total-price">$75</td>
+              <td class="total-price">$6.49</td>
               <td><button class="remove-btn">Remove</button></td>
-          </tr>
-          <tr>
-              <td><img src="images/Chia Seed Pudding.jpeg" alt="Product 4"></td>
+            </tr>
+            <!-- Example Row 4 -->
+            <tr>
+              <td><img src="images/Chia Seed Pudding.jpeg" alt="Chia Seed Pudding"></td>
               <td>Chia Seed Pudding</td>
-              <td class="price">$45</td>
+              <td class="price">$3.99</td>
               <td>
-                <button class="qty-btn">-</button>
+                <button class="qty-btn minus">-</button>
                 <input type="number" value="1" min="1" class="qty-input">
-                <button class="qty-btn">+</button>
+                <button class="qty-btn plus">+</button>
               </td>
-              <td class="total-price">$45</td>
+              <td class="total-price">$3.99</td>
               <td><button class="remove-btn">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="order-summary-container1">
+        <h3>Order Summary</h3>
+        <table class="order-summary-table">
+          <tr>
+            <td>Sub Total</td>
+            <td id="sub-total">$21.46</td>
           </tr>
-      </tbody>
-    </table>
-</div>
-
-<div class="order-summary-container">
-  <h3>Order Summary</h3>
-  <table class="order-summary-table">
-      <tr>
-          <td>Sub Total</td>
-          <td id="sub-total">$200.00</td>
-      </tr>
-      <tr>
-          <td>Tax</td>
-          <td id="tax">$10.00</td>
-      </tr>
-      <tr>
-          <td><strong>Total</strong></td>
-          <td id="total"><strong>$210.00</strong></td>
-      </tr>
-  </table>
-  <a href="products.html"  target="_blank">
-    <button class="action-btn">Continue Shopping</button>
-  </a>
-  <a href="checkoutpage.html"  target="_blank">
-  <button class="action-btn">Proceed to Checkout</button> 
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</main>
-
-<script>
-function increaseQty(button) {
-    let qtySpan = button.parentElement.querySelector('.qty');
-    qtySpan.innerText = parseInt(qtySpan.innerText) + 1;
-}
-
-function decreaseQty(button) {
-    let qtySpan = button.parentElement.querySelector('.qty');
-    let currentQty = parseInt(qtySpan.innerText);
-    if (currentQty > 1) {
-        qtySpan.innerText = currentQty - 1;
-    }
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
+          <tr>
+            <td>Tax (10%)</td>
+            <td id="tax">$2.15</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td id="total"><strong>$23.61</strong></td>
+          </tr>
+        </table>
+        <a href="products.html" target="_blank">
+          <button class="action-btn">Continue Shopping</button>
+        </a>
+        <a href="checkoutpage.html" target="_blank">
+          <button class="action-btn">Proceed to Checkout</button>
+        </a>
+      </div>
 
     </main>
     <footer>
@@ -183,5 +140,7 @@ function decreaseQty(button) {
         </nav>
       </div>
     </footer>
+
+  <script src="script.js"></script>
   </body>
 </html>
